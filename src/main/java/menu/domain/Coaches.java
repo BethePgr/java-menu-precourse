@@ -11,4 +11,11 @@ public class Coaches {
         coachList.add(coach);
     }
 
+    public void addCoachByName(String name){
+        coachList.add(new Coach(name));
+    }
+
+    public List<Coach> getCoachList(){
+        return coachList;
+    }
 }

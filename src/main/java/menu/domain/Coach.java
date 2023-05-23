@@ -12,6 +12,10 @@ public class Coach {
         this.myMenuList = new Menus();
     }
 
+    public void addMyMenuList(Menu menu){
+        myMenuList.addMenu(menu);
+    }
+
     public String getName(){
         return name;
     }
