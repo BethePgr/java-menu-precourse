@@ -53,4 +53,15 @@ class InputViewValidateTest {
         //then
         assertThrows(IllegalArgumentException.class, () -> InputViewValidate.validateCoachNames(coachNames));
     }
+
+    @Test
+    @DisplayName("코치가 이름 중복이 존재하므로 에러를 던진다.")
+    void test5() throws Exception {
+        //given
+        String input = "one,two,thr,thr,six";
+        //when
+        List<String> coachNames = Converter.toListSplitsByComma(input);
+        //then
+        assertThrows(IllegalArgumentException.class, () -> InputViewValidate.validateCoachNames(coachNames));
+    }
 }
