@@ -1,11 +1,13 @@
 package menu.domain;
 
+import menu.domain.enums.Category;
+
 public class Menu {
 
-    private final String category;
+    private final Category category;
     private final String menuName;
 
-    public Menu(String category, String menuName) {
+    public Menu(Category category, String menuName) {
         this.category = category;
         this.menuName = menuName;
     }
