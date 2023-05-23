@@ -23,7 +23,7 @@ class InputCoachHateListValidateTest {
     @DisplayName("")
     void test1() throws Exception{
         //given
-        List<String> menuList = new ArrayList<>(List.of("규동","우동"));
+        String menuList = "규동,우동";
         //when
         //then
         assertDoesNotThrow(() -> InputCoachHateListValidate.validateCoachHateList(menuList));
@@ -33,7 +33,7 @@ class InputCoachHateListValidateTest {
     @DisplayName("")
     void test2() throws Exception{
         //given
-        List<String> menuList = new ArrayList<>(List.of("규동","가나"));
+        String menuList = "규동,가나";
         //when
         //then
         assertThrows(IllegalArgumentException.class, () -> InputCoachHateListValidate.validateCoachHateList(menuList));

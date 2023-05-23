@@ -6,6 +6,7 @@ import menu.domain.Menu;
 import menu.domain.MenuRepository;
 import menu.domain.Menus;
 import menu.service.MenuService;
+import menu.utils.Converter;
 import menu.view.InputView;
 import menu.view.OutputView;
 
@@ -19,8 +20,11 @@ public class MenuController {
         MenuService menuService = new MenuService(strings);
 
         for(Coach coach : menuService.getCoaches().getCoachList()){
-            List<String> hateList = InputController.inputHateList(coach);
-            menuService.addHateList(coach,hateList);
+            String hateList = InputController.inputHateList(coach);
+            if(!hateList.isBlank()){
+                List<String> hateLists = Converter.toListSplitsByComma(hateList);
+                menuService.addHateList(coach,hateLists);
+            }
         }
         menuService.selectForFiveTimes();
         OutputView.printResult(menuService);

@@ -61,8 +61,7 @@ public class MenuRepository {
     }
 
     public static Menu getMenuByName(String name) {
-        return menuList.stream().filter(menu -> menu.getMenuName().equals(name)).findAny()
-            .orElseThrow(() -> new IllegalArgumentException("[ERROR] 해당 이름의 음식은 없습니다."));
+        return menuList.stream().filter(menu -> menu.getMenuName().equals(name)).findAny().get();
     }
 
     public static List<Menu> getMenuList(){

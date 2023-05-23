@@ -20,9 +20,9 @@ public class InputController {
         }
     }
 
-    public static List<String> inputHateList(Coach coach){
+    public static String inputHateList(Coach coach){
         try{
-            List<String> hateList = Converter.toListSplitsByComma(InputView.inputCoachHateList(coach));
+            String hateList = InputView.inputCoachHateList(coach);
             InputCoachHateListValidate.validateCoachHateList(hateList);
             return hateList;
         }catch (IllegalArgumentException e){

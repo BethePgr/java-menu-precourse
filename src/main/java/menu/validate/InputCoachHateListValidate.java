@@ -3,12 +3,17 @@ package menu.validate;
 import java.util.List;
 import menu.domain.Menu;
 import menu.domain.MenuRepository;
+import menu.utils.Converter;
 
 public class InputCoachHateListValidate {
 
-    public static void validateCoachHateList(List<String> menuList) {
-        validateHateListLengthBetween0And2(menuList);
-        validateHateFoodIsInMenuRepo(menuList);
+    public static void validateCoachHateList(String menu) {
+        if(!menu.isBlank()){
+            List<String> menuList = Converter.toListSplitsByComma(menu);
+            validateHateListLengthBetween0And2(menuList);
+            validateHateFoodIsInMenuRepo(menuList);
+        }
+
     }
 
     private static void validateHateListLengthBetween0And2(List<String> menuList) {
