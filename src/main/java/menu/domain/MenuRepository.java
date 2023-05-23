@@ -14,7 +14,7 @@ public class MenuRepository {
     private final static String asiaFoods = "팟타이, 카오 팟, 나시고렝, 파인애플 볶음밥, 쌀국수, 똠얌꿍, 반미, 월남쌈, 분짜";
     private final static String westernFoods = "라자냐, 그라탱, 뇨끼, 끼슈, 프렌치 토스트, 바게트, 스파게티, 피자, 파니니";
 
-    public void init(){
+    public static void init(){
         setJapanFoods();
         setKoreaFoods();
         setChinaFoods();
@@ -22,33 +22,37 @@ public class MenuRepository {
         setWesternFoods();
     }
 
-    private void setJapanFoods() {
+    private static void setJapanFoods() {
         for(String menuName : Converter.toListSplitsByComma(japanFoods)){
             menuList.add(new Menu(Category.JAPAN,menuName));
         }
     }
 
-    private void setKoreaFoods(){
+    private static void setKoreaFoods(){
         for(String menuName : Converter.toListSplitsByComma(koreaFoods)){
             menuList.add(new Menu(Category.KOREA,menuName));
         }
     }
 
-    private void setChinaFoods(){
+    private static void setChinaFoods(){
         for(String menuName : Converter.toListSplitsByComma(chinaFoods)){
             menuList.add(new Menu(Category.CHINA,menuName));
         }
     }
 
-    private void setAsiaFoods(){
+    private static void setAsiaFoods(){
         for(String menuName :Converter.toListSplitsByComma(asiaFoods)){
             menuList.add(new Menu(Category.ASIA,menuName));
         }
     }
 
-    private void setWesternFoods(){
+    private static void setWesternFoods(){
         for(String menuName : Converter.toListSplitsByComma(westernFoods)){
             menuList.add(new Menu(Category.WESTERN,menuName));
         }
+    }
+
+    public static List<Menu> getMenuList(){
+        return menuList;
     }
 }
