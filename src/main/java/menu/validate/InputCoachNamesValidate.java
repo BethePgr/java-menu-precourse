@@ -1,11 +1,8 @@
 package menu.validate;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
-import menu.utils.Converter;
 
-public class InputViewValidate {
+public class InputCoachNamesValidate {
 
     public static void validateCoachNames(List<String> coachNames) {
         validateAllCoachNamesLength(coachNames);

@@ -7,7 +7,7 @@ import menu.utils.Converter;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class InputViewValidateTest {
+class InputCoachNamesValidateTest {
 
 
     @Test
@@ -18,7 +18,7 @@ class InputViewValidateTest {
         //when
         List<String> coachNames = Converter.toListSplitsByComma(input);
         //then
-        assertThrows(IllegalArgumentException.class, () -> InputViewValidate.validateCoachNames(coachNames));
+        assertThrows(IllegalArgumentException.class, () -> InputCoachNamesValidate.validateCoachNames(coachNames));
     }
 
     @Test
@@ -29,7 +29,7 @@ class InputViewValidateTest {
         //when
         List<String> coachNames = Converter.toListSplitsByComma(input);
         //then
-        assertDoesNotThrow(() -> InputViewValidate.validateCoachNames(coachNames));
+        assertDoesNotThrow(() -> InputCoachNamesValidate.validateCoachNames(coachNames));
     }
 
     @Test
@@ -40,7 +40,7 @@ class InputViewValidateTest {
         //when
         List<String> coachNames = Converter.toListSplitsByComma(input);
         //then
-        assertThrows(IllegalArgumentException.class, () -> InputViewValidate.validateCoachNames(coachNames));
+        assertThrows(IllegalArgumentException.class, () -> InputCoachNamesValidate.validateCoachNames(coachNames));
     }
 
     @Test
@@ -51,7 +51,7 @@ class InputViewValidateTest {
         //when
         List<String> coachNames = Converter.toListSplitsByComma(input);
         //then
-        assertThrows(IllegalArgumentException.class, () -> InputViewValidate.validateCoachNames(coachNames));
+        assertThrows(IllegalArgumentException.class, () -> InputCoachNamesValidate.validateCoachNames(coachNames));
     }
 
     @Test
@@ -62,6 +62,6 @@ class InputViewValidateTest {
         //when
         List<String> coachNames = Converter.toListSplitsByComma(input);
         //then
-        assertThrows(IllegalArgumentException.class, () -> InputViewValidate.validateCoachNames(coachNames));
+        assertThrows(IllegalArgumentException.class, () -> InputCoachNamesValidate.validateCoachNames(coachNames));
     }
 }
