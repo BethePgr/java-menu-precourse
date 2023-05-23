@@ -11,4 +11,8 @@ public class Menu {
         this.category = category;
         this.menuName = menuName;
     }
+
+    public String getMenuName(){
+        return menuName;
+    }
 }
