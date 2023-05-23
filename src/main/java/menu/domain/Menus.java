@@ -10,4 +10,8 @@ public class Menus {
     public void addMenu(Menu menu){
         menuList.add(menu);
     }
+
+    public List<Menu> getMenuList(){
+        return menuList;
+    }
 }

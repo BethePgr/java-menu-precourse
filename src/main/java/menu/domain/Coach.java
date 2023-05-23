@@ -16,7 +16,19 @@ public class Coach {
         myMenuList.addMenu(menu);
     }
 
+    public void addHateMenuList(Menu menu){
+        hateMenuList.addMenu(menu);
+    }
+
     public String getName(){
         return name;
+    }
+
+    public Menus getHateMenuList(){
+        return hateMenuList;
+    }
+
+    public Menus getMyMenuList(){
+        return myMenuList;
     }
 }
