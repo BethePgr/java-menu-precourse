@@ -1,7 +1,9 @@
 package menu.controller;
 
 import java.util.List;
+import menu.domain.Coach;
 import menu.utils.Converter;
+import menu.validate.InputCoachHateListValidate;
 import menu.validate.InputCoachNamesValidate;
 import menu.view.InputView;
 
@@ -15,6 +17,17 @@ public class InputController {
         }catch (IllegalArgumentException e){
             System.out.println(e.getMessage());
             return inputCoachNames();
+        }
+    }
+
+    public static List<String> inputHateList(Coach coach){
+        try{
+            List<String> hateList = Converter.toListSplitsByComma(InputView.inputCoachHateList(coach));
+            InputCoachHateListValidate.validateCoachHateList(hateList);
+            return hateList;
+        }catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
+            return inputHateList(coach);
         }
     }
 
